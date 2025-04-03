@@ -1,0 +1,110 @@
+/* Basic Reset & Body Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    overflow: hidden; /* Hide scrollbars if gradient causes them */
+}
+
+/* Container for Content */
+.container {
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.05); /* Subtle background */
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px); /* Glassmorphism effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 600px;
+    width: 90%;
+}
+
+/* Simple Logo Placeholder */
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #53d8fb; /* Neon blue accent */
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(83, 216, 251, 0.5);
+}
+
+/* Main Heading */
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Loading Message Styling */
+.loading-message {
+    font-size: 1.4em;
+    font-weight: 300;
+    color: #c0c0c0;
+    margin-bottom: 30px;
+}
+
+.loading-message .highlight {
+    font-weight: 400;
+    color: #53d8fb; /* Match logo accent */
+}
+
+/* Animated Dots */
+.dots {
+    display: inline-block;
+    width: 1.5em; /* Adjust space for dots */
+    text-align: left;
+    animation: blink 1.4s infinite both;
+}
+
+@keyframes blink {
+    0%    { opacity: 0; }
+    20%   { opacity: 1; content: "."; }
+    40%   { opacity: 1; content: ".."; }
+    60%   { opacity: 1; content: "..."; }
+    100%  { opacity: 0; content: "";} /* Fade out */
+}
+
+/* Simple Loader Animation */
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-top: 5px solid #53d8fb; /* Accent color */
+    border-radius: 50%;
+    margin: 20px auto 0;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    .loading-message {
+        font-size: 1.1em;
+    }
+    .logo {
+        font-size: 2em;
+    }
+    .container {
+        padding: 30px;
+    }
+}
